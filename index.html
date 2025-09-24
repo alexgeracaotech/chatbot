@@ -1,0 +1,51 @@
+<!doctype html>
+
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot Project</title>
+  </head>
+  <body>
+
+    <main id="container"></main>
+
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script crossorigin src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/babel" >
+      
+      function ChatInput() {
+        return (
+          <div>
+            <input placeholder="Send a message to Chatbot" size="30"/>
+            <button>Send</button>
+          </div>
+        );
+      };
+
+      function ChatMessage() {
+        return (
+          <div>
+            Hello Chatbot!
+            <img src="./assets/user.png" width="50"/>
+          </div>
+        );
+      };
+
+      const App = (
+        <>
+          <ChatInput/>
+          <ChatMessage/>
+        </>
+      );
+
+      const container = document.querySelector('#container');
+      const root = ReactDOM.createRoot(container);
+      root.render(App);
+      
+    </script>
+
+  </body>
+</html>
