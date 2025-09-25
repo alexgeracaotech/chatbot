@@ -25,10 +25,10 @@
         );
       };
 
-      function ChatMessage() {
+      function ChatMessage(props) {
+        console.log(props);
         return (
           <div>
-            Hello Chatbot!
             <img src="./assets/user.png" width="50"/>
           </div>
         );
@@ -37,7 +37,7 @@
       const App = (
         <>
           <ChatInput/>
-          <ChatMessage/>
+          <ChatMessage message="Hello Chatbot!"/>
         </>
       );
 
