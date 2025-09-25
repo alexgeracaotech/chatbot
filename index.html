@@ -26,9 +26,11 @@
       };
 
       function ChatMessage(props) {
-        console.log(props);
+        const message = props.message;
+
         return (
           <div>
+            {message}
             <img src="./assets/user.png" width="50"/>
           </div>
         );
