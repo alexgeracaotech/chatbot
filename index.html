@@ -31,8 +31,10 @@
       crossorigin
       src="https://unpkg.com/@babel/standalone/babel.min.js"
     ></script>
-
+      
     <script type="text/babel">
+
+      const container = document.querySelector('#container');
 
       function ChatInput() {
         return (
@@ -56,7 +58,7 @@
             {sender === 'user' && (
               <img src="./assets/user.png" width="50" />
             )}
-          </div>
+            </div>
         );
       };
 
@@ -101,13 +103,12 @@
       function App() {
         return (
           <>
-            <ChatInput />
+            <ChatInput/>
             <ChatMessages/>
           </>
         );
       };
 
-      const container = document.querySelector('#container');
       ReactDOM.createRoot(container).render(<App />);
 
     </script>
