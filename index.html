@@ -114,14 +114,14 @@
 
           // console.log(chatMessages);
 
-          setChatMessages(
+          setChatMessages([
             ...chatMessages,
             {
               message: 'Testing!',
               sender: 'user',
               id: crypto.randomUUID()
             }
-          );
+          ]);
         };
 
         return (
