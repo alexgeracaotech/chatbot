@@ -82,11 +82,18 @@
         }];
 
         function sendMessage() {
-          chatMessages.push()
+          chatMessages.push({
+            message: 'Testing!',
+            user: 'user',
+            id: crypto.randomUUID()
+          });
+
+          console.log(chatMessages);
         };
 
         return (
           <>
+            <button onClick={sendMessage}>Send Message</button>
             {chatMessages.map(chatMessage => {
               return (
                 <ChatMessage
