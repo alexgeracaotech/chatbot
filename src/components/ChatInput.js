@@ -1,5 +1,5 @@
 
-const ChatInput = () => {
+const ChatInput = ({ newMessage, setNewMessage }) => {
 
   const [inputValue, setInputValue] = React.useState('');
 
@@ -9,7 +9,13 @@ const ChatInput = () => {
   }
 
   function sendMessage() {
-    console.log(inputValue);
+    setNewMessage([
+      ...newMessage, {
+        message: inputValue,
+        sender: 'user',
+        id: crypto.randomUUID()
+      }
+    ]);
   }
 
   return (
