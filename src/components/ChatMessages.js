@@ -18,7 +18,19 @@ const ChatMessages = () => {
     id: crypto.randomUUID()
   }];
 
-  const chatMessageComponent = messages.map((chatMessage) => {
+  const [newMessage, setNewMessage] = React.useState(messages);
+
+  function addNewMessage() {
+    setNewMessage([
+      ...newMessage, {
+        message: 'Testing!',
+        sender: 'user',
+        id: crypto.randomUUID()
+      }
+    ]);
+  }
+
+  const chatMessageComponent = newMessage.map((chatMessage) => {
     return (
       <ChatMessage
         message={chatMessage.message}
@@ -30,6 +42,7 @@ const ChatMessages = () => {
 
   return (
     <>
+      <button onClick={addNewMessage}>Add New Message</button>
       {chatMessageComponent}
     </>
   );
